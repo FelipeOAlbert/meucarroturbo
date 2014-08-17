@@ -1,0 +1,5 @@
+application/config/database.php
+assets/upload/banner/*
+assets/upload/business/*
+assets/upload/notice/*
+assets/upload/service/*

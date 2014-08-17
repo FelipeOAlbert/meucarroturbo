@@ -1,0 +1,169 @@
+#sidebar-nav{
+    padding-top: 0;
+}
+#pad-wrapper{
+    margin-top: 20px;
+}
+
+.pac-container, .ui-autocomplete{
+    z-index: 20000;
+}
+
+.new-user .form-wrapper .complete-address div label{
+    float: none;
+    display: block;
+    font-weight: normal;
+}
+
+.new-user .form-wrapper .complete-address input[type="text"]{
+    width: 100%;
+}
+
+.new-user .form-wrapper .complete-address input[type="text"]#autocomplete{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.new-user .form-wrapper .complete-address .logradouro{
+    width: 75%;
+}
+
+.new-user .form-wrapper .complete-address .number{
+    width: 40%;
+}
+.new-user .form-wrapper .complete-address .row input{
+    margin-bottom: 20px;
+}
+
+
+
+.end-rota{
+     border-top: 1px solid #EEEEEE;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.end-rota .ponto-rota{
+    background: none repeat scroll 0 0 #CCCCCC;
+    border-radius: 1.9em;
+    font-size: 19px;
+    padding: 7px 0;
+    text-align: center !important;
+}
+.end-rota .ponto-rota:after{
+    background: none repeat scroll 0 0 #CCCCCC;
+    content: "";
+    display: block;
+    height: 105px;
+    left: 50%;
+    position: absolute;
+    top: 46px;
+    margin-left: -1px;
+    width: 2px;
+    z-index: 1100;
+}
+.end-rota .ponto-rota.atual, .end-rota .ponto-rota.active, .end-rota .ponto-rota.active:after{
+    background: #333;
+    color: #fff;
+}
+.end-rota .ponto-rota.proximo:after{
+    display: none;
+}
+.end-rota .ponto-rota label{
+    padding: 0;
+    text-align: center !important;
+}
+.end-rota textarea{
+    height: 34px;
+}
+
+.end-rota .btn-erase{
+    padding: 0;
+}
+
+.end-rota .btn-erase a{
+    background: #F5F5F5;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    height: 20px;
+    display: block;
+    right: 2px;
+    text-align: center;
+    width: 20px;
+    color: #ccc;
+}
+.end-rota:first-child{
+    border-top: none;
+}
+
+.btn-add-call{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 250px;;
+}
+
+.info-rote div{
+        border-right: 1px solid #ccc;
+        text-align: center;
+        margin: 20px 0;
+}
+
+.info-rote div:last-child{
+    border: none;
+}
+
+.info-rote p span{
+    font-weight: bold;
+    font-size: 16px;
+}
+.info-rote p .icon{
+    font-size: 20px;
+}
+
+
+@media (max-width: 767px) {
+    .input-end{
+        margin-bottom: 15px;
+    }
+    .end-rota .ponto-rota:after{
+        height: 145px;
+    }
+}
+
+/* ----- Novo form ----*/
+
+.label-destino{
+    text-align: center;
+}
+.icon-drag{
+    background: url("../../img/icon-drag.png") repeat-y scroll left top rgba(0, 0, 0, 0);
+    cursor: move;
+    height: 60px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 18px;
+}
+
+.icon-drag:hover{
+    background-position: right top;
+}
+
+.grid20{ width: 20px;}
+.seta-cima {
+width: 0;
+height: 0;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+border-bottom: 5px solid #aaa;
+}
+
+.seta-baixo {
+width: 0;
+height: 0;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+border-top: 5px solid #aaa;
+}
