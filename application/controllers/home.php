@@ -49,7 +49,8 @@ class home extends CI_Controller {
 		}else{
 			
 			// faz o cadastro....
-			$this->seller->save_fb();
+			if(!$this->seller->save_fb())
+				return json_encode(array('status' => 'error', 'message' => 'Erro ao cadastrar usuário'));
 			
 			// faz o login
 			$this->security_model->fb_login();
