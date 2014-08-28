@@ -83,6 +83,41 @@ class seller_model extends CI_Model{
         return FALSE;
 	}
 	
+	function save_fb($id = false)
+	{
+		$data = array(
+			'name' 				=> $this->input->post('name', FALSE),
+			'email' 			=> $this->input->post('email', FALSE),
+			'fb_id' 			=> $this->input->post('email', FALSE),
+			'email' 			=> $this->input->post('email', FALSE),
+			'status_id' 		=> 1
+		);
+		
+		if(!empty($_POST['password'])){
+			$data['password']	= md5($this->input->post('password', FALSE));
+		}
+		
+		if(intval($id) > 0){
+			
+			$data['updated_in']	= date('Y-m-d H:i:s');
+			
+			if($this->db->get_where($this->tablename, array('id' => $id))->num_rows() == 1){
+				if($this->db->where(array('id' => $id))->update($this->tablename, $data)){
+					return true;
+				}
+			}
+		}else{
+			
+			$data['created_in']	= date('Y-m-d H:i:s');
+			
+			if($this->db->insert($this->tablename, $data)){
+				return true;
+			}
+		}
+		
+        return FALSE;
+	}
+	
 	function lista($pagina, $where = array())
 	{
 		if($where){

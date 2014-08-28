@@ -39,4 +39,11 @@ class security_model extends CI_Model
 		
 		return false;
 	}
+	
+	public final function login_fb()
+	{
+		$this->db->get_where('seller', array('user_email' => $this->input->post('email'), 'fb_id' => $this->input->post('email')))->row_array();
+		
+		
+	}
 }
