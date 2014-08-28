@@ -11,7 +11,7 @@ class user_model extends CI_Model{
 		$this->tablename = 'user';
 	}
 	
-	function getAll( $where=false, $content=false)
+	function getAll( $where=false, $content=false, $return = 'row_array')
 	{
 		if($content==false)
 			$this->db->select('*');
@@ -26,7 +26,7 @@ class user_model extends CI_Model{
 		$query = $this->db->get();
 		
 		if($query->num_rows() > 0)
-			return $query->row_array();
+			return $query->{$return}();
 		else
 			return false;
 	}

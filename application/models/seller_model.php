@@ -11,7 +11,7 @@ class seller_model extends CI_Model{
 		$this->tablename = 'seller';
 	}
 	
-	function getAll( $where=false, $content=false)
+	function getAll($where = false, $content = false, $return = 'row_array')
 	{
 		if($content==false)
 			$this->db->select('*');
@@ -30,7 +30,7 @@ class seller_model extends CI_Model{
 		else
 			return false;
 	}
-
+	
 	public final function save_profile()
 	{
 		$data = array(

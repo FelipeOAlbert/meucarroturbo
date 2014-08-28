@@ -2,11 +2,15 @@
 
 class home extends CI_Controller {
 	
-	private $keyword;
+	private $keyword, $data;
 	
 	function __construct()
 	{
 		parent::__construct();
+		
+		$this->load->model('seller_model', 'seller');
+		
+		$this->data = array();
 	}
 	
 	public final function render($method, $data = array())
@@ -18,17 +22,46 @@ class home extends CI_Controller {
 	
 	public function index()
 	{
-		die('Home');
+		$this->load->view('site/home');
 		
-		$data['title']			= EMPRESA;
-		$empresa				= $this->business->getAll();
-		$data['description']	= strip_tags(character_limiter($empresa['description'], 160));
-		$data['keywords']		= $this->keyword;
-		$data['banners']		= $this->banner->getAll(array('status_id' => 1), false, true);
-		$data['rows']			= $this->service->list_site(array('status_id' => 1, 'list' => 1));
+		//die('Home');
 		
-		$this->render($this->router->method, $data);
+		//$data['title']			= EMPRESA;
+		//$empresa				= $this->business->getAll();
+		//$data['description']	= strip_tags(character_limiter($empresa['description'], 160));
+		//$data['keywords']		= $this->keyword;
+		//$data['banners']		= $this->banner->getAll(array('status_id' => 1), false, true);
+		//$data['rows']			= $this->service->list_site(array('status_id' => 1, 'list' => 1));
+		
+		//$this->render($this->router->method, $data);
 	}
+	
+	function login_fb()
+	{
+		
+		// verifica se email do usuario está cadastrado na base
+		$user	= $this->seller->getAll(array('email' => $this->input->post('email', false)));
+		
+		if($user){
+			
+			// se ja estiver na base, verifica se tem o fb_id, caso sim faz o login
+			
+		}else{
+			
+			// faz o cadastro....
+			$this->seller->save_fb();
+			
+			// faz o login
+			$this->security_model->fb_login();
+			
+		}
+		
+		printr($user);
+		
+		die('ki');
+		
+	}
+	
 	
 	public function business()
 	{
