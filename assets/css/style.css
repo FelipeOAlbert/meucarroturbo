@@ -1,0 +1,6 @@
+.clear{ clear: both; }
+
+.box-car{ margin-left: -40px; }
+.box-car li{ list-style: none; background: #fff; border-radius: 0.2em; border: 1px solid #dedede; }
+
+.text-box{ padding: 15px; margin-top:-20px; }
